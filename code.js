@@ -77,7 +77,7 @@ function processItem(item, listCounters, images) {
       case DocumentApp.ParagraphHeading.HEADING1:
         prefix = "<h1>", suffix = "</h1>"; break;
       default: 
-        prefix = "", suffix = "";
+        prefix = "<p>", suffix = "\r\r\r";
     }
 
     if (item.getNumChildren() == 0)
