@@ -4,6 +4,8 @@ function ConvertGoogleDocToCleanHtml() {
   var output = [];
   var images = [];
   var listCounters = {};
+  
+  body.replaceText("</strong>[\r\n]+<em>","</strong>\r\r\r<em>");
 
   // Walk through all the child elements of the body.
   for (var i = 0; i < numChildren; i++) {
@@ -61,7 +63,7 @@ function processItem(item, listCounters, images) {
   var output = [];
   var prefix = "", suffix = "";
   
-  item.replaceText("</strong>[\r\n]+<em>","</strong>\r\r\r<em>");
+ 
 
   if (item.getType() == DocumentApp.ElementType.PARAGRAPH) {
     switch (item.getHeading()) {
