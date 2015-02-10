@@ -5,7 +5,7 @@ function ConvertGoogleDocToCleanHtml() {
   var images = [];
   var listCounters = {};
   //text between name and address
-  body.replaceText("</strong>[\r\n]+<em>","</strong>\r\r\r<em>");
+  body.replaceText("/</strong>[\r\n]+<em>/g","</strong>\r\r\r<em>");
 
   //text between entries
   body.replaceText("/</em>[\r\n]+<strong>/g","</em>\r\r\r<strong>");
