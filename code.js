@@ -189,13 +189,13 @@ function processText(item, output) {
       Logger.log(partText);
 
       if (partAtts.ITALIC) {
-        output.push('<i>');
+        //output.push('<i>');
       }
       if (partAtts.BOLD) {
-        output.push('<b>');
+        //output.push('<b>');
       }
       if (partAtts.UNDERLINE) {
-        output.push('<u>');
+       // output.push('<u>');
       }
 
       // If someone has written [xxx] and made this whole text some special font, like superscript
