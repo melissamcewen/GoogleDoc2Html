@@ -4,9 +4,11 @@ function ConvertGoogleDocToCleanHtml() {
   var output = [];
   var images = [];
   var listCounters = {};
-  
-  body.replaceText("/</strong>[\r\n]+<em>/g","</strong>\r\r\r<em>");
-  body.replaceText("/</strong>[\r\n]+<em>/g","</em>\r\r\r<strong>");
+  //text between name and address
+  body.replaceText("</strong>[\r\n]+<em>","</strong>\r\r\r<em>");
+
+  //text between entries
+  body.replaceText("/</em>[\r\n]+<strong>/g","</em>\r\r\r<strong>");
 
   // Walk through all the child elements of the body.
   for (var i = 0; i < numChildren; i++) {
