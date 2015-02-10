@@ -169,13 +169,13 @@ function processText(item, output) {
   if (indices.length <= 1) {
     // Assuming that a whole para fully italic is a quote
     if(item.isBold()) {
-      output.push('<b>' + text + '</b>');
+      //output.push('<b>' + text + '</b>');
     }
     else if(item.isItalic()) {
-      output.push('<blockquote>' + text + '</blockquote>');
+     // output.push('<blockquote>' + text + '</blockquote>');
     }
     else if (text.trim().indexOf('http://') == 0) {
-      output.push('<a href="' + text + '" rel="nofollow">' + text + '</a>');
+     // output.push('<a href="' + text + '" rel="nofollow">' + text + '</a>');
     }
     else {
       output.push(text);
