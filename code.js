@@ -60,6 +60,8 @@ function dumpAttributes(atts) {
 function processItem(item, listCounters, images) {
   var output = [];
   var prefix = "", suffix = "";
+  
+  item.replaceText("</strong>[\r\n]+<em>","</strong>\r\r\r<em>");
 
   if (item.getType() == DocumentApp.ElementType.PARAGRAPH) {
     switch (item.getHeading()) {
@@ -77,7 +79,7 @@ function processItem(item, listCounters, images) {
       case DocumentApp.ParagraphHeading.HEADING1:
         prefix = "<h1>", suffix = "</h1>"; break;
       default: 
-        prefix = "", suffix = "\r\r\r";
+        prefix = "", suffix = "";
     }
 
     if (item.getNumChildren() == 0)
